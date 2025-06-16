@@ -11,6 +11,22 @@ public class Main {
     // Клас для реалізації CRUD операцій для завдань
     static class TaskManager {
         private List<String> tasks = new ArrayList<>();
+        // Список клієнтів
+        private List<Client> clients = new ArrayList<>();
+
+        // Метод для пошуку клієнтів по ключовому слову
+        public List<Client> searchClient(String query) {
+            List<Client> searchResult = new ArrayList<>();
+
+            // Шукаємо за іменем або прізвищем
+            for (Client client : clients) {
+                if (client.getFirstName().toLowerCase().contains(query.toLowerCase()) ||
+                        client.getLastName().toLowerCase().contains(query.toLowerCase())) {
+                    searchResult.add(client);
+                }
+            }
+            return searchResult;
+        }
 
         // Операція Create (створення)
         public void createTask(String task) {
@@ -49,7 +65,8 @@ public class Main {
             return tasks;
         }
     }
-
+        // CRUD операції для завдань (як ви вже маєте)
+    }
     // Клас для реалізації клієнтів
     static class Client {
         private int id;

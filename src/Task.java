@@ -12,7 +12,7 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    // Гетери для кожного поля
+    // Геттери
     public String getName() {
         return name;
     }
@@ -25,10 +25,26 @@ public class Task {
         return dueDate;
     }
 
-    // Метод toString для виведення інформації про завдання
+    // Сеттери
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDueDate(LocalDateTime dueDate) {
+        this.dueDate = dueDate;
+    }
+
     @Override
     public String toString() {
-        return "Завдання: " + name + "\nОпис: " + description + "\nДата виконання: " + dueDate;
+        return "Task{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", dueDate=" + dueDate +
+                '}';
     }
 }
 
